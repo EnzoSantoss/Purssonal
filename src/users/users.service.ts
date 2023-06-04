@@ -16,6 +16,7 @@ export class UsersService {
   }
 
   findAll() {
+    console.log('teste');
     return `This action returns all users`;
   }
 
