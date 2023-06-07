@@ -15,13 +15,16 @@ export class UsersService {
     return await newUser.save();
   }
 
-  findAll() {
-    console.log('teste');
-    return `This action returns all users`;
+  async findAll() {
+    return await this.userModel.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  findById(param: string) {
+    return 'ok';
+  }
+
+  async findByNickName(nickName: string): Promise<User> {
+    return await this.userModel.findOne({ nickName });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
