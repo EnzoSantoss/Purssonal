@@ -15,7 +15,7 @@ export class AuthService {
     const user = await this.userService.findByNickName(nickName);
 
     if (user.passWord !== pass) {
-      throw new UnauthorizedException('Senha ou nick invalido sla porrakkkk');
+      throw new UnauthorizedException('Senha ou nick invalido');
     }
 
     const payload = { sub: user.id, nickName: user.nickName };
